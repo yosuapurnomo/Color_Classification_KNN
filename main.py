@@ -28,7 +28,7 @@ def Mouse_Crop(event, x, y, flags, param):
         refPoint = [(ix, iy), (ix_end, iy_end)]
 
         if len(refPoint) == 2:
-            img2 = img_copy[refPoint[0][1]:refPoint[1][1], refPoint[0][0]:refPoint[1][0]]
+            img2 = img[refPoint[0][1]:refPoint[1][1], refPoint[0][0]:refPoint[1][0]]
             clear = cv.fastNlMeansDenoisingColored(img2)
 
             show_clear = cv
@@ -47,7 +47,7 @@ def Mouse_Crop(event, x, y, flags, param):
             print(f"RGB {c3, c2, c1} Termasuk dalam Kategori Warna : ", final.check())
 
 
-img = cv.imread('img/Putih/1.png')
+img = cv.imread('img/View.jpg')
 img_copy = img.copy()
 
 cv.namedWindow("image")
